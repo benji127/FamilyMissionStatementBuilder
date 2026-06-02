@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Mission Statement · Covey Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0E0B08;
+  --bg2: #161210;
+  --card: #1A1613;
+  --border: rgba(255,235,180,0.1);
+  --border2: rgba(255,235,180,0.18);
+  --gold: #D4A853;
+  --gold2: #F0C97A;
+  --amber: #C47B2B;
+  --text: #EDE5D5;
+  --muted: #7A6E5E;
+  --soft: #B8AC98;
+  --red: #C45A3A;
+  --green: #4A8C6F;
+  --blue: #4A7AAC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* AMBIENT BG */
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 72px 24px 20px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(34px, 6.5vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+h1 em { font-style: italic; color: var(--gold2); }
+
+.hero-sub {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 12px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.covey-quote {
+  display: inline-block;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--soft);
+  border-left: 2px solid var(--amber);
+  padding: 8px 18px;
+  margin: 24px auto 0;
+  text-align: left;
+  max-width: 520px;
+}
+
+.covey-quote span {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* STEP NAV */
+.step-nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 56px 24px 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.step-dot-inner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.step-dot.active .step-dot-inner {
+  border-color: var(--gold);
+  background: rgba(212,168,83,0.12);
+  color: var(--gold);
+}
+
+.step-dot.done .step-dot-inner {
+  border-color: var(--green);
+  background: rgba(74,140,111,0.1);
+  color: var(--green);
+}
+
+.step-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  font-weight: 500;
+}
+
+.step-dot.active .step-label { color: var(--gold); }
+.step-dot.done .step-label { color: var(--green); }
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 28px;
+  max-width: 60px;
+}
+
+/* CONTENT AREA */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 48px auto 0;
+  padding: 0 24px 100px;
+}
+
+/* STEP PANELS */
+.step-panel { display: none; animation: fadeUp 0.4s ease; }
+.step-panel.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION HEADER */
+.section-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-head h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.section-head h2 em { font-style: italic; color: var(--gold2); }
+
+.section-head p {
+  font-size: 13.5px;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* EXAMPLE CARDS — Covey's sample statements */
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.example-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s;
+  cursor: pointer;
+}
+
+.example-card:hover { border-color: var(--border2); }
+
+.example-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent, var(--gold));
+}
+
+.ex-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.ex-name {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.ex-statement {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--soft);
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+.ex-elements {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ex-tag {
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(255,235,180,0.06);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* PROCESS STEPS */
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 600px) { .process-steps { grid-template-columns: 1fr; } }
+
+.process-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.ps-num {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--amber);
+  opacity: 0.4;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ps-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 5px;
+  letter-spacing: 0.3px;
+}
+
+.ps-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* BUILDER */
+.builder-card {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.builder-row {
+  margin-bottom: 22px;
+}
+
+.builder-label {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 600px) { .member-grid { grid-template-columns: 1fr; } }
+
+.member-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member-role {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.field-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.field-input:focus { border-color: var(--gold); }
+.field-input::placeholder { color: var(--muted); }
+
+textarea.field-input {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.value-pill {
+  font-size: 12px;
+  padding: 7px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--soft);
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  transition: all 0.2s;
+  font-weight: 400;
+}
+
+.value-pill:hover { border-color: var(--gold); color: var(--gold); }
+.value-pill.selected { background: rgba(212,168,83,0.12); border-color: var(--gold); color: var(--gold2); }
+
+.generate-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--amber), var(--gold));
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.generate-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.generate-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* AI RESPONSE BOX */
+.ai-result {
+  margin-top: 24px;
+  background: rgba(212,168,83,0.04);
+  border: 1px solid rgba(212,168,83,0.2);
+  border-radius: 12px;
+  padding: 28px;
+  display: none;
+}
+
+.ai-result.visible { display: block; animation: fadeUp 0.4s ease; }
+.ai-result.loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 13px;
+}
+
+.ai-result-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-result-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.ai-statement-text {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.ai-breakdown {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--soft);
+}
+
+.copy-btn {
+  margin-top: 18px;
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--gold);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover { background: rgba(212,168,83,0.08); }
+
+/* NEXT/PREV BUTTONS */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.nav-next {
+  background: var(--gold);
+  color: #000;
+  border: none;
+}
+
+.nav-next:hover { background: var(--gold2); }
+
+.nav-prev {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--soft);
+}
+
+.nav-prev:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AI CHAT */
+.ai-chat-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.chat-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.quick-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.qp {
+  font-size: 11.5px;
+  padding: 7px 13px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  transition: all 0.2s;
+}
+
+.qp:hover { border-color: var(--gold); color: var(--gold); }
+
+.chat-row { display: flex; gap: 10px; }
+
+.chat-input {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-input:focus { border-color: var(--gold); }
+.chat-input::placeholder { color: var(--muted); }
+
+.chat-send {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.chat-send:hover { background: var(--gold2); }
+.chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.chat-response {
+  margin-top: 16px;
+  padding: 18px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.78;
+  color: var(--soft);
+  display: none;
+  border: 1px solid var(--border);
+}
+
+.chat-response.visible { display: block; animation: fadeUp 0.3s ease; }
+.chat-response.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 36px 0;
+}
+
+/* DOTS LOADER */
+.dots span {
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: db 1.2s infinite;
+}
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes db {
+  0%,60%,100% { transform: translateY(0); }
+  30% { transform: translateY(-7px); }
+}
+
+/* FINAL DISPLAY */
+.final-frame {
+  background: linear-gradient(160deg, #1E1A14, #141008);
+  border: 1px solid rgba(212,168,83,0.3);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,83,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.final-family-name {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.final-statement {
+  font-family: 'Lora', serif;
+  font-size: clamp(17px, 3vw, 24px);
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.final-values-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.final-val {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid rgba(212,168,83,0.25);
+  border-radius: 20px;
+  color: var(--gold);
+  background: rgba(212,168,83,0.06);
+}
+
+.final-members {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Stephen Covey · 7 Habits Effective Families · AI Playbook</div>
+  <h1>Family<br><em>Mission Statement</em><br>Builder</h1>
+  <p class="hero-sub">Covey's framework for uniting a family around shared purpose — explored, understood, and built with AI.</p>
+  <div class="covey-quote">
+    "The family mission statement literally becomes the DNA of family life."
+    <span>— Stephen R. Covey</span>
+  </div>
+</div>
+
+<!-- STEP NAV -->
+<div class="step-nav">
+  <div class="step-dot active" id="nav-0" onclick="goStep(0)">
+    <div class="step-dot-inner">1</div>
+    <div class="step-label">Learn</div>
+  </div>
+  <div class="step-line"></div>
+  <div class="step-dot" id="nav-1" onclick="goStep(1)">
+    <div class="step-dot-inner">2</div>
+    <div class="step-label">Examples</div>
+  </div>
+  <div class="step-line"></div>
+  <div class="step-dot" id="nav-2" onclick="goStep(2)">
+    <div class="step-dot-inner">3</div>
+    <div class="step-label">Build</div>
+  </div>
+  <div class="step-line"></div>
+  <div class="step-dot" id="nav-3" onclick="goStep(3)">
+    <div class="step-dot-inner">4</div>
+    <div class="step-label">Finalize</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- STEP 1: LEARN -->
+  <div class="step-panel active" id="panel-0">
+    <div class="section-head">
+      <h2>What Covey Says About<br><em>Family Mission Statements</em></h2>
+      <p>From Habit 2 — Begin With the End in Mind. A family mission statement is a compass, not a contract.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <div>
+          <div class="ps-title">It must include every voice</div>
+          <div class="ps-desc">Covey insists all family members — including young children — contribute to building it. Emotional buy-in only comes through genuine participation.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <div>
+          <div class="ps-title">It takes time — and rewrites</div>
+          <div class="ps-desc">Even Covey's own family statement was drafted, reworked and rewritten multiple times over the years. It evolves as the family grows.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <div>
+          <div class="ps-title">Post it somewhere visible</div>
+          <div class="ps-desc">On the fridge, near the dinner table, in the hallway. It's meant to be seen, referred to during decisions, and discussed at family meals.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <div>
+          <div class="ps-title">Three core elements</div>
+          <div class="ps-desc">Covey's framework calls for: what kind of home you want, what you want individuals to become, and how you want to contribute to the world beyond your family.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-chat-section">
+      <span class="chat-label">✦ Ask AI about Covey's mission statement framework</span>
+      <div class="quick-row">
+        <button class="qp" onclick="askLearn('Why does Covey say the process is as important as the final statement?')">Why is the process key?</button>
+        <button class="qp" onclick="askLearn('What makes a family mission statement different from personal one?')">Family vs personal?</button>
+        <button class="qp" onclick="askLearn('How do you get buy-in from children when writing a family mission statement?')">Getting kids involved</button>
+        <button class="qp" onclick="askLearn('What happens to families that skip having a mission statement?')">Families without one?</button>
+      </div>
+      <div class="chat-row">
+        <input class="chat-input" id="learn-input" type="text" placeholder="Ask anything about Covey's approach…" onkeydown="if(event.key==='Enter') askLearn()">
+        <button class="chat-send" id="learn-btn" onclick="askLearn()">Ask →</button>
+      </div>
+      <div class="chat-response" id="learn-response"></div>
+    </div>
+
+    <div class="nav-row">
+      <div></div>
+      <button class="nav-btn nav-next" onclick="goStep(1)">See Examples →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: EXAMPLES -->
+  <div class="step-panel" id="panel-1">
+    <div class="section-head">
+      <h2>Real <em>Examples</em> from the Book</h2>
+      <p>Covey outlines the key ingredients found in effective family mission statements. These illustrate those principles.</p>
+    </div>
+
+    <div class="example-grid">
+
+      <div class="example-card" style="--accent: #D4A853;">
+        <span class="ex-label">The Covey Family · Original</span>
+        <div class="ex-name">Covey's Own Statement</div>
+        <div class="ex-statement">"To create a nurturing place of faith, order, truth, love, happiness and relaxation — and to provide opportunity for every person to become responsibly independent and effectively interdependent, in order to serve worthy purposes in society."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">Home atmosphere</span>
+          <span class="ex-tag">Individual growth</span>
+          <span class="ex-tag">Contribution</span>
+          <span class="ex-tag">Interdependence</span>
+        </div>
+      </div>
+
+      <div class="example-card" style="--accent: #4A8C6F;">
+        <span class="ex-label">Values-Led Family · Example A</span>
+        <div class="ex-name">Centred on Character</div>
+        <div class="ex-statement">"In our family, we put people before things. We say sorry when we're wrong, we forgive freely, and we tell the truth — even when it's hard. Our home is a place where everyone feels safe to grow."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">Forgiveness</span>
+          <span class="ex-tag">Honesty</span>
+          <span class="ex-tag">Safety</span>
+          <span class="ex-tag">People first</span>
+        </div>
+      </div>
+
+      <div class="example-card" style="--accent: #4A7AAC;">
+        <span class="ex-label">Service-Oriented Family · Example B</span>
+        <div class="ex-name">Built Around Purpose</div>
+        <div class="ex-statement">"We are a family that gives back. We work hard, stay curious, take care of each other, and use our gifts to make a difference in the lives of others. We leave places better than we found them."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">Service</span>
+          <span class="ex-tag">Work ethic</span>
+          <span class="ex-tag">Curiosity</span>
+          <span class="ex-tag">Legacy</span>
+        </div>
+      </div>
+
+      <div class="example-card" style="--accent: #C45A3A;">
+        <span class="ex-label">Young Family · Example C</span>
+        <div class="ex-name">Simple &amp; Memorable</div>
+        <div class="ex-statement">"We laugh together, learn together, and love each other always. We are honest, we are kind, and we never give up on each other."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">Connection</span>
+          <span class="ex-tag">Simplicity</span>
+          <span class="ex-tag">Resilience</span>
+          <span class="ex-tag">Unconditional love</span>
+        </div>
+      </div>
+
+      <div class="example-card" style="--accent: #8A6AAC;">
+        <span class="ex-label">Intergenerational · Example D</span>
+        <div class="ex-name">The O'Brien Family Model</div>
+        <div class="ex-statement">"We align our individual dreams with our family's direction. We honor our roots, celebrate our differences, and commit to goals that serve all of us — today and in the generation that follows."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">Shared vision</span>
+          <span class="ex-tag">Heritage</span>
+          <span class="ex-tag">Long-term goals</span>
+          <span class="ex-tag">Unity</span>
+        </div>
+      </div>
+
+      <div class="example-card" style="--accent: #AC8A3A;">
+        <span class="ex-label">3-Member Family · Example E</span>
+        <div class="ex-name">Small Family, Big Purpose</div>
+        <div class="ex-statement">"Three of us, one direction. We choose joy, we choose growth, and we choose each other — every single day. Our home is built on honesty, and our future is built on love."</div>
+        <div class="ex-elements">
+          <span class="ex-tag">3-member unit</span>
+          <span class="ex-tag">Intentionality</span>
+          <span class="ex-tag">Daily commitment</span>
+          <span class="ex-tag">Trust</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ai-chat-section">
+      <span class="chat-label">✦ Ask AI to analyse any of these examples</span>
+      <div class="quick-row">
+        <button class="qp" onclick="askExamples('What makes the Covey family statement so effective?')">Why is Covey\'s statement strong?</button>
+        <button class="qp" onclick="askExamples('Which example works best for a 3-person family and why?')">Best for 3 members?</button>
+        <button class="qp" onclick="askExamples('What are the three elements every Covey family mission statement should have?')">3 key elements</button>
+        <button class="qp" onclick="askExamples('How long should a family mission statement be?')">Ideal length?</button>
+      </div>
+      <div class="chat-row">
+        <input class="chat-input" id="examples-input" type="text" placeholder="Ask about any of the examples above…" onkeydown="if(event.key==='Enter') askExamples()">
+        <button class="chat-send" id="examples-btn" onclick="askExamples()">Ask →</button>
+      </div>
+      <div class="chat-response" id="examples-response"></div>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn nav-prev" onclick="goStep(0)">← Back</button>
+      <button class="nav-btn nav-next" onclick="goStep(2)">Build Yours →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: BUILD -->
+  <div class="step-panel" id="panel-2">
+    <div class="section-head">
+      <h2>Build Your Family's<br><em>Mission Statement</em></h2>
+      <p>Fill in your family's details. AI will craft a personalized statement rooted in Covey's three-element framework.</p>
+    </div>
+
+    <div class="builder-card">
+
+      <div class="builder-row">
+        <span class="builder-label">Family Name</span>
+        <input class="field-input" id="family-name" type="text" placeholder="e.g. The Santos Family" style="max-width: 300px;">
+      </div>
+
+      <div class="builder-row">
+        <span class="builder-label">Three Family Members</span>
+        <div class="member-grid">
+          <div class="member-input-group">
+            <span class="member-role">Member 1</span>
+            <input class="field-input" id="m1-name" type="text" placeholder="Name">
+            <input class="field-input" id="m1-role" type="text" placeholder="Role (e.g. Parent, Dad…)">
+            <input class="field-input" id="m1-value" type="text" placeholder="Their top value or dream">
+          </div>
+          <div class="member-input-group">
+            <span class="member-role">Member 2</span>
+            <input class="field-input" id="m2-name" type="text" placeholder="Name">
+            <input class="field-input" id="m2-role" type="text" placeholder="Role (e.g. Parent, Mom…)">
+            <input class="field-input" id="m2-value" type="text" placeholder="Their top value or dream">
+          </div>
+          <div class="member-input-group">
+            <span class="member-role">Member 3</span>
+            <input class="field-input" id="m3-name" type="text" placeholder="Name">
+            <input class="field-input" id="m3-role" type="text" placeholder="Role (e.g. Child, Son…)">
+            <input class="field-input" id="m3-value" type="text" placeholder="Their top value or dream">
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-row">
+        <span class="builder-label">Core Family Values — select up to 5</span>
+        <div class="values-grid" id="values-grid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="builder-row">
+        <span class="builder-label">What kind of home do you want?</span>
+        <textarea class="field-input" id="home-feel" placeholder="e.g. A warm, safe place where everyone feels heard and loved…"></textarea>
+      </div>
+
+      <div class="builder-row">
+        <span class="builder-label">How do you want to contribute beyond your family?</span>
+        <textarea class="field-input" id="contribution" placeholder="e.g. Give back to our community, raise children who lead with kindness…"></textarea>
+      </div>
+
+      <div class="builder-row">
+        <span class="builder-label">Tone / Style</span>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="value-pill" id="tone-poetic" onclick="selectTone('poetic')">Poetic & Warm</button>
+          <button class="value-pill" id="tone-simple" onclick="selectTone('simple')">Simple & Memorable</button>
+          <button class="value-pill" id="tone-formal" onclick="selectTone('formal')">Purposeful & Formal</button>
+          <button class="value-pill" id="tone-spiritual" onclick="selectTone('spiritual')">Faith-Centred</button>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generate-btn" onclick="generateStatement()">✦ Generate Our Family Mission Statement</button>
+
+      <div class="ai-result" id="ai-result">
+        <div class="ai-result-label">Your Family Mission Statement</div>
+        <div class="ai-statement-text" id="ai-statement-text"></div>
+        <div class="ai-breakdown" id="ai-breakdown"></div>
+        <button class="copy-btn" onclick="copyStatement()">Copy Statement</button>
+      </div>
+
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn nav-prev" onclick="goStep(1)">← Back</button>
+      <button class="nav-btn nav-next" onclick="goStep(3)">Finalize →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: FINALIZE -->
+  <div class="step-panel" id="panel-3">
+    <div class="section-head">
+      <h2>Your Family<br><em>Mission Statement</em></h2>
+      <p>Display it. Live it. Revisit it together every year.</p>
+    </div>
+
+    <div class="final-frame" id="final-frame">
+      <div class="final-family-name" id="final-family-label">The Family</div>
+      <div class="final-statement" id="final-display-statement">
+        Complete Step 3 to see your personalized mission statement here.
+      </div>
+      <div class="final-values-row" id="final-values-row"></div>
+      <div class="final-members" id="final-members-display"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="ai-chat-section">
+      <span class="chat-label">✦ Refine or explore your statement further</span>
+      <div class="quick-row">
+        <button class="qp" onclick="askFinal('How do we introduce this statement at a family meeting?')">How to introduce it</button>
+        <button class="qp" onclick="askFinal('How often should we review our family mission statement?')">When to revisit?</button>
+        <button class="qp" onclick="askFinal('How do we make this statement come alive in daily decisions?')">Making it daily</button>
+        <button class="qp" onclick="askFinal('What family rituals does Covey recommend alongside a mission statement?')">Covey\'s rituals</button>
+      </div>
+      <div class="chat-row">
+        <input class="chat-input" id="final-input" type="text" placeholder="Ask AI to refine or expand your statement…" onkeydown="if(event.key==='Enter') askFinal()">
+        <button class="chat-send" id="final-btn" onclick="askFinal()">Ask →</button>
+      </div>
+      <div class="chat-response" id="final-response"></div>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn nav-prev" onclick="goStep(2)">← Back to Builder</button>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─── VALUES ───
+const ALL_VALUES = ['Love','Honesty','Respect','Kindness','Courage','Faith','Forgiveness','Growth','Service','Unity','Gratitude','Resilience','Compassion','Joy','Integrity','Curiosity','Loyalty','Generosity','Discipline','Adventure'];
+
+let selectedValues = [];
+let selectedTone = 'poetic';
+let generatedStatement = '';
+
+function buildValuesGrid() {
+  const g = document.getElementById('values-grid');
+  ALL_VALUES.forEach(v => {
+    const btn = document.createElement('button');
+    btn.className = 'value-pill';
+    btn.textContent = v;
+    btn.id = 'val-' + v;
+    btn.onclick = () => toggleValue(v);
+    g.appendChild(btn);
+  });
+}
+
+function toggleValue(v) {
+  const btn = document.getElementById('val-' + v);
+  if (selectedValues.includes(v)) {
+    selectedValues = selectedValues.filter(x => x !== v);
+    btn.classList.remove('selected');
+  } else if (selectedValues.length < 5) {
+    selectedValues.push(v);
+    btn.classList.add('selected');
+  }
+}
+
+function selectTone(t) {
+  selectedTone = t;
+  ['poetic','simple','formal','spiritual'].forEach(x => {
+    document.getElementById('tone-' + x)?.classList.remove('selected');
+  });
+  document.getElementById('tone-' + t)?.classList.add('selected');
+}
+
+// ─── STEP NAV ───
+let currentStep = 0;
+
+function goStep(n) {
+  document.getElementById('panel-' + currentStep).classList.remove('active');
+  document.getElementById('nav-' + currentStep).classList.remove('active');
+  if (currentStep < n) document.getElementById('nav-' + currentStep).classList.add('done');
+
+  currentStep = n;
+  document.getElementById('panel-' + n).classList.add('active');
+  document.getElementById('nav-' + n).classList.add('active');
+  document.getElementById('nav-' + n).classList.remove('done');
+
+  if (n === 3) populateFinal();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── AI CALLS ───
+async function callAI(systemPrompt, userMessage, responseEl, btnEl) {
+  responseEl.className = responseEl.className.includes('chat-response') ? 'chat-response loading visible' : 'ai-result loading visible';
+  responseEl.innerHTML = 'Thinking <div class="dots"><span></span><span></span><span></span></div>';
+  if (btnEl) btnEl.disabled = true;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userMessage }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.find(b => b.type === 'text')?.text || 'No response.';
+    return text;
+  } catch(e) {
+    return 'Something went wrong. Please try again.';
+  } finally {
+    if (btnEl) btnEl.disabled = false;
+  }
+}
+
+function renderChatResponse(el, text) {
+  el.className = 'chat-response visible';
+  el.innerHTML = text.split('\n\n').map(p => `<p style="margin-bottom:10px">${p}</p>`).join('');
+}
+
+// Step 1 chat
+async function askLearn(preset) {
+  const input = document.getElementById('learn-input');
+  const q = preset || input.value.trim();
+  if (!q) return;
+  if (!preset) input.value = '';
+  const el = document.getElementById('learn-response');
+  const btn = document.getElementById('learn-btn');
+  el.className = 'chat-response loading visible';
+  el.innerHTML = 'Thinking <div class="dots"><span></span><span></span><span></span></div>';
+  btn.disabled = true;
+  const text = await callAI(
+    `You are an expert on Stephen Covey's "The 7 Habits of Highly Effective Families." Answer questions about his family mission statement framework — Habit 2: Begin With the End in Mind. Be insightful, practical, and warm. Prose only, 2-3 paragraphs.`,
+    q, el, btn
+  );
+  renderChatResponse(el, text);
+}
+
+// Step 2 chat
+async function askExamples(preset) {
+  const input = document.getElementById('examples-input');
+  const q = preset || input.value.trim();
+  if (!q) return;
+  if (!preset) input.value = '';
+  const el = document.getElementById('examples-response');
+  const btn = document.getElementById('examples-btn');
+  el.className = 'chat-response loading visible';
+  el.innerHTML = 'Thinking <div class="dots"><span></span><span></span><span></span></div>';
+  btn.disabled = true;
+  const text = await callAI(
+    `You are a Covey family habits coach. You help families understand and build mission statements using Covey's three-element framework: (1) what kind of home, (2) what individuals should become, (3) how to contribute beyond the family. Answer with clarity, warmth, and practical wisdom. Prose only, 2-3 paragraphs.`,
+    q, el, btn
+  );
+  renderChatResponse(el, text);
+}
+
+// Step 3: Generate
+async function generateStatement() {
+  const familyName = document.getElementById('family-name').value || 'Our Family';
+  const m1 = { name: document.getElementById('m1-name').value, role: document.getElementById('m1-role').value, value: document.getElementById('m1-value').value };
+  const m2 = { name: document.getElementById('m2-name').value, role: document.getElementById('m2-role').value, value: document.getElementById('m2-value').value };
+  const m3 = { name: document.getElementById('m3-name').value, role: document.getElementById('m3-role').value, value: document.getElementById('m3-value').value };
+  const homeFeel = document.getElementById('home-feel').value;
+  const contribution = document.getElementById('contribution').value;
+  const toneMap = { poetic: 'poetic, warm, and heartfelt', simple: 'short, simple, and easy to memorize', formal: 'purposeful, structured, and clear', spiritual: 'faith-centred, reverent, and meaningful' };
+  const tone = toneMap[selectedTone] || 'warm and purposeful';
+
+  const el = document.getElementById('ai-result');
+  const btn = document.getElementById('generate-btn');
+  el.className = 'ai-result loading visible';
+  el.innerHTML = 'Crafting your statement <div class="dots"><span></span><span></span><span></span></div>';
+  btn.disabled = true;
+
+  const userMsg = `
+Family: ${familyName}
+Members:
+- ${m1.name || 'Member 1'} (${m1.role || 'parent'}): values/dreams — ${m1.value || 'not specified'}
+- ${m2.name || 'Member 2'} (${m2.role || 'parent'}): values/dreams — ${m2.value || 'not specified'}
+- ${m3.name || 'Member 3'} (${m3.role || 'child'}): values/dreams — ${m3.value || 'not specified'}
+Core values selected: ${selectedValues.length ? selectedValues.join(', ') : 'not specified'}
+Home atmosphere desired: ${homeFeel || 'warm and nurturing'}
+Contribution beyond family: ${contribution || 'serving others and making a difference'}
+Tone: ${tone}
+
+Please create a complete family mission statement and follow it with a short paragraph explaining how it reflects Covey's three-element framework (home atmosphere, individual growth, contribution to the world).
+
+Format your response as:
+STATEMENT: [the mission statement]
+BREAKDOWN: [the explanation paragraph]
+  `;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: `You are a family mission statement coach trained in Stephen Covey's methodology from "The 7 Habits of Highly Effective Families." Create a beautiful, authentic family mission statement that reflects the family's real values and names. It must embody Covey's three core elements: (1) what kind of home they want to create, (2) what each person should become individually, (3) how they want to contribute to the world beyond their family. The statement should feel personal, not generic. Honour the tone requested.`,
+        messages: [{ role: 'user', content: userMsg }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.find(b => b.type === 'text')?.text || '';
+
+    const stMatch = text.match(/STATEMENT:\s*([\s\S]*?)(?:\n\nBREAKDOWN:|$)/);
+    const bdMatch = text.match(/BREAKDOWN:\s*([\s\S]*)/);
+    const statement = stMatch ? stMatch[1].trim() : text;
+    const breakdown = bdMatch ? bdMatch[1].trim() : '';
+
+    generatedStatement = statement;
+
+    el.className = 'ai-result visible';
+    el.innerHTML = `
+      <div class="ai-result-label">Your Family Mission Statement</div>
+      <div class="ai-statement-text" id="ai-statement-text">${statement}</div>
+      ${breakdown ? `<div class="ai-breakdown" id="ai-breakdown">${breakdown}</div>` : ''}
+      <button class="copy-btn" onclick="copyStatement()">Copy Statement</button>
+    `;
+  } catch(e) {
+    el.className = 'ai-result visible';
+    el.innerHTML = '<p style="color:var(--muted)">Something went wrong. Please try again.</p>';
+  }
+
+  btn.disabled = false;
+}
+
+function copyStatement() {
+  const text = document.getElementById('ai-statement-text')?.textContent || generatedStatement;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = 'Copy Statement', 2000);
+  });
+}
+
+// Step 4: Populate final
+function populateFinal() {
+  const familyName = document.getElementById('family-name').value || 'Our Family';
+  const m1name = document.getElementById('m1-name').value;
+  const m2name = document.getElementById('m2-name').value;
+  const m3name = document.getElementById('m3-name').value;
+
+  document.getElementById('final-family-label').textContent = `The ${familyName.replace(/^The /i, '')}`;
+
+  const stmt = generatedStatement || document.getElementById('ai-statement-text')?.textContent || 'Return to Step 3 and generate your statement first.';
+  document.getElementById('final-display-statement').textContent = stmt;
+
+  const vr = document.getElementById('final-values-row');
+  vr.innerHTML = selectedValues.map(v => `<span class="final-val">${v}</span>`).join('');
+
+  const members = [m1name, m2name, m3name].filter(Boolean);
+  document.getElementById('final-members-display').textContent = members.length ? members.join('  ·  ') : '';
+}
+
+// Step 4 chat
+async function askFinal(preset) {
+  const input = document.getElementById('final-input');
+  const q = preset || input.value.trim();
+  if (!q) return;
+  if (!preset) input.value = '';
+  const el = document.getElementById('final-response');
+  const btn = document.getElementById('final-btn');
+  el.className = 'chat-response loading visible';
+  el.innerHTML = 'Thinking <div class="dots"><span></span><span></span><span></span></div>';
+  btn.disabled = true;
+  const context = generatedStatement ? `The family's mission statement is: "${generatedStatement}"` : '';
+  const text = await callAI(
+    `You are a Covey family habits coach specializing in The 7 Habits of Highly Effective Families. ${context} Help the family bring their mission statement to life, build family rituals around it, and keep it relevant. Warm, practical, inspiring. Prose only, 2-3 paragraphs.`,
+    q, el, btn
+  );
+  renderChatResponse(el, text);
+}
+
+// ─── INIT ───
+buildValuesGrid();
+selectTone('poetic');
+</script>
+</body>
+</html>
